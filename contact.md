@@ -6,8 +6,8 @@ permalink: /contact/
 
 #Contact info
 
-I can be found on IRC on the handle ``axyridis``, and read the email coming to 
-these address:
+I can be found on IRC (freenode) using ``axyridis``, and at whichever of
+these two addresses you prefer:
 
 <axyridis@riseup.net> [Public PGP key](https://pgp.mit.edu/pks/lookup?op=get&search=0x3D47670F42269A83)
 
