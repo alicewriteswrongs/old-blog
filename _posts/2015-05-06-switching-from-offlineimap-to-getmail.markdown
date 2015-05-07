@@ -62,9 +62,9 @@ ignore what I've written about facilitating multiple accounts (getmail
 will automatically read it's options from any file in `.getmail` named
 `getmailrc`).
 
-`read_all` makes email downloading faster, by allowing Getmail to remember
-which mails it has already downloaded (it writes a file to ~/.getmail for
-each account).
+`read_all = False` makes email downloading faster, by allowing Getmail to
+remember which mails it has already downloaded (it writes a file to
+~/.getmail for each account).
 
 ##Multiple Accounts craziness
 
