@@ -45,8 +45,9 @@ $on-laptop:        800px;
 
 
 // Import partials from `sass_dir` (defaults to `_sass`)
+// Solarized light and dark are options
 @import
         "base",
         "layout",
-        "syntax-highlighting"
+        "solarizedLight"
 ;
