@@ -117,7 +117,9 @@ and your `$EDITOR` will open the file you need to edit. If you just
 installed Cron there's probably nothing in there. Lets add the following
 line: 
 
+    {% highlight bash %}
     */2 * * * * /usr/bin/mygetmail
+    {% endhighlight %}
 
 Great! This specifies that the job will run every two minutes. If you
 don't care about getting mail that often you can change it to run every
@@ -126,9 +128,10 @@ don't care about getting mail that often you can change it to run every
 One last thing: although we've added the Cron job, it doesn't mean that
 Cron is running yet. For Cronie you need to enable a systemd service:
 
+    {% highlight bash %}
     sudo systemctl enable cronie.service
     sudo systemctl start cronie.service
+    {% endhighlight %}
 
 And that should be it! Now that you've got all that email saved in lovely
 straightforward Maildirs consider pointing [Sup](www.supmua.org) at it!
-    
