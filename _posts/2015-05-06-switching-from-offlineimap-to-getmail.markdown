@@ -36,7 +36,6 @@ Which is where we'll store configuration files for each inbox. These look
 like this (for a Gmail account, other providers will be slightly
 different):
 
-    {% highlight bash %}
     [retriever]
     type = SimplePOP3SSLRetriever
     server = pop.gmail.com
@@ -50,7 +49,6 @@ different):
 
     [options]
     read_all = False
-    {% endhighlight %}
 
 I called each config file something like `alice_gmail`, something
 descriptive that will be clear later. This will tell Getmail to import all
@@ -78,18 +76,14 @@ for each mail account we want to download from, and we then need to call
 getmail with all of these config files as arguments. What I did to make
 this easier was write a little shell script, `mygetmail.sh`:
 
-    {% highlight bash %}
     getmail --rcfile alice_gmail --rcfile other_gmail --rcfile
     hampshire_mail --rcfile riseup_mail
-    {% endhighlight %}
 
 Where each argument to `--rcfile` is a configuration file written
 following the example above. Nice! Then I just wrote a symbolic link:
 
-    {% highlight bash %}
     chmod +x mygetmail.sh
     ln -s ~/path/to/mygetmail.sh /usr/bin/mygetmail
-    {% endhighlight %}
 
 Sweet! Then we can execute that to download mail from all the accounts
 we're working with. If these aren't new accounts and you're downloading 50k
@@ -109,17 +103,13 @@ issues.
 
 If you've got it installed just do
 
-    {% highlight bash %}
     crontab -e
-    {% endhighlight %}
 
 and your `$EDITOR` will open the file you need to edit. If you just
 installed Cron there's probably nothing in there. Lets add the following
 line: 
 
-    {% highlight bash %}
     */2 * * * * /usr/bin/mygetmail
-    {% endhighlight %}
 
 Great! This specifies that the job will run every two minutes. If you
 don't care about getting mail that often you can change it to run every
@@ -128,10 +118,8 @@ don't care about getting mail that often you can change it to run every
 One last thing: although we've added the Cron job, it doesn't mean that
 Cron is running yet. For Cronie you need to enable a systemd service:
 
-    {% highlight bash %}
     sudo systemctl enable cronie.service
     sudo systemctl start cronie.service
-    {% endhighlight %}
 
 And that should be it! Now that you've got all that email saved in lovely
 straightforward Maildirs consider pointing [Sup](www.supmua.org) at it!

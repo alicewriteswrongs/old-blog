@@ -10,17 +10,17 @@ SSD. This turned out to be a little more complicated than I thought it
 should be!
 
 First off, my initial partition layout looked like this, on a 320GB HDD:
-    
-    * `/dev/sda1`: /, 30G
-    * `/dev/sda2`: swap, 8G
-    * `/dev/sda3`: /home, 260G
+
+    /dev/sda1: /, 30G
+    /dev/sda2: swap, 8G
+    /dev/sda3: /home, 260G
 
 We'll be adding a new device, sdb, and what we want, ultimately, is:
 
-    * `/dev/sdb1`: /, 30G
-    * `/dev/sdb2`: /home/user/fast_home, 28G
-    * `/dev/sda1`: swap, 8G
-    * `/dev/sda2`: /home. 290G
+  /dev/sdb1: /, 30G
+  /dev/sdb2: /home/user/fast_home, 28G
+  /dev/sda1: swap, 8G
+  /dev/sda2: /home. 290G
 
 Right! So the first thing we want to do is create a new partition table and
 a partition on sdb. I'm using GUID for my partition table, and I'll be sticking
