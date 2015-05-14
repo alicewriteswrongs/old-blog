@@ -45,7 +45,7 @@ tired of it yet, anyway!).
 
 ##Activating i3lock
 
-OK, so if we've got a nice little shellscript written, how to we actually
+OK, so if we've got a nice little shellscript written, how do we actually
 lock the screen? I do it three different ways to cover all my bases.
 
 ###Key combo
