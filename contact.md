@@ -6,7 +6,7 @@ permalink: /contact/
 
 #Contact info
 
-I can be found on IRC (freenode) using ``axyridis``, and at whichever of
+I can be found on IRC (freenode) using ``axyridis``, on [Telegram](https://telegram.org/) at @aliceriot, and at whichever of
 these two addresses you prefer:
 
 <axyridis@riseup.net> 
