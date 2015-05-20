@@ -6,10 +6,11 @@ permalink: /contact/
 
 #Contact info
 
-I can be found on IRC (freenode) using ``axyridis``, on [Telegram](https://telegram.me/aliceriot) and at whichever of
-these two addresses you prefer:
+[Telegram](https://telegram.me/aliceriot)
 
-<axyridis@riseup.net> 
+IRC (freenode): axyridis
+
+Email: <axyridis@riseup.net> 
 
 [Public PGP key](https://pgp.mit.edu/pks/lookup?op=get&search=0x3D47670F42269A83) fingerprint: 43D1 4BEF 39F7 4027 B02A DC4D 3D47 670F 4226 9A83 
 
