@@ -2,6 +2,9 @@
 layout: post
 title: "Migrating Arch Linux install to an SSD"
 date: 2014-10-22T13:44:56-04:00
+tags:
+    - archlinux
+    - linux
 ---
 
 Today I got a new 60GB mSATA ssd in the mail and set about migrating

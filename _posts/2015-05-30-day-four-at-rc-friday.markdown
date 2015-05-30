@@ -2,6 +2,12 @@
 layout: post
 title: Day Four at RC (friday!)
 date: 2015-05-30T00:29:01-04:00
+tags:
+    - GnuPG
+    - recurse center
+    - nyc
+    - git
+    - privacy
 ---
 
 I'm now done with the first week at RC, and I think to celebrate I'll

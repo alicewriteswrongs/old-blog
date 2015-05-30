@@ -1,6 +1,12 @@
 ---
+layout: post
 title: RC day 3
 date: 2015-05-29T14:31:59-04:00
+tags:
+    - git
+    - crypto
+    - haskell 
+    - recurse center
 ---
 
 What did I do today? Mainly I worked on the gitViz project I've started.

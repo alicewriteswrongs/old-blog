@@ -2,6 +2,11 @@
 layout: post
 title: First day at RC
 date: 2015-05-26T23:02:30-04:00
+tags:
+    - recurse center
+    - kernel
+    - linux
+    - crypto 
 ---
 
 Today was my first day at the Recurse Center! What did I get up to? Well:

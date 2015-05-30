@@ -2,6 +2,9 @@
 layout: post
 title: Complete screenlocking solution for i3
 date: 2015-05-14T12:50:41-04:00
+tags:
+    - security
+    - i3wm
 ---
 
 I've been using [i3](https://i3wm.org) for a while now, and while I'm

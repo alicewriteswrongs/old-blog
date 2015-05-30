@@ -2,6 +2,9 @@
 layout: post
 title: "Vim-LaTeXsuite and Mupdf"
 date: 2014-10-17T12:56:14-04:00
+tags:
+    - vim
+    - latex
 ---
 
 #Using muPDF with Vim-LaTeXSuite

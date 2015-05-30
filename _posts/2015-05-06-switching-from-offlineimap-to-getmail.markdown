@@ -2,6 +2,11 @@
 layout: post
 title: "Switching from Offlineimap to Getmail"
 date: 2015-05-06T10:36:31-04:00
+tags:
+    - offlineimap
+    - email
+    - getmail
+    - sup
 ---
 
 So I've been happily using Offlineimap to get local copies (in Maildirs) of all

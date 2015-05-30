@@ -2,6 +2,11 @@
 layout: post
 title: RC, day 2! Haskell and Git stuff
 date: 2015-05-27T23:10:03-04:00
+tags:
+    - haskell
+    - git
+    - c
+    - recurse center
 ---
 
 I had a great second day at RC! I'm just going to give a quick summary of what I did:

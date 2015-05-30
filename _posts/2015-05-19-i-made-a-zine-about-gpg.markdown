@@ -2,6 +2,11 @@
 layout: post
 title: "I made a zine about GPG"
 date: 2015-05-19T09:26:54-04:00
+tags:
+    - GnuPG
+    - privacy
+    - email
+    - zine
 ---
 
 I made a zine! It teaches the reader how to install Thunderbird and

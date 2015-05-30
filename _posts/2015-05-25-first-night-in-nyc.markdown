@@ -2,6 +2,9 @@
 layout: post
 title: First night in NYC
 date: 2015-05-25T21:08:33-04:00
+tags:
+    - cecurse center
+    - nyc
 ---
 
 I'm super super excited because tomorrow I'm going to start my batch at
