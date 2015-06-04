@@ -1,6 +1,10 @@
 ---
+layout: post
 title: RC Day 7
 date: 2015-06-03T20:14:55-04:00
+tags:
+    - recurse center
+    - crypto
 ---
 
 I passed Eudyptula task 02! Nice! So now I have to compile a custom kernel
