@@ -43,7 +43,7 @@ void month_day(int year, int yearday, int *pmonth, int *pday)
 {% endhighlight %}
 
 I love relying on a boolean expression to get an array index! Nice and
-elegant. Anyway, in trying to get this to work taught me something useful,
+elegant. Anyway, in trying to get this to work I learned something useful.
 I originally had this as `main`:
 
 {% highlight c %}
