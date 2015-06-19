@@ -100,7 +100,7 @@ prelude functions `map`, `filter`, etc.
 
 In fact, we have an iterator adapter called map! This again takes
 a closure, and will return an iterator consisting of the values produced
-by applying that function to the element of our original iterator. What's
+by applying that function to the elements of our original iterator. What's
 this look like? Ok, we'll calculate the first 20 squares:
 
 {% highlight rust %} 
