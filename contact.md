@@ -8,7 +8,7 @@ Email/Jabber: <axyridis@riseup.net>
 
 Alternate: <alice.writes.wrongs@gmail.com>
 
-PGP fingerprint: 43D1 4BEF 39F7 4027 B02A DC4D 3D47 670F 4226 9A83 
+PGP fingerprint: 1A24 475C 7576 4586 22FB  4265 1480 C33E 2920 7A51 
 
 You can find my PGP key on the [keyserver pool](pool.sks-keyservers.net) or on
 [keybase](https://keybase.io/aliceriot).
