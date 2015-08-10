@@ -57,7 +57,7 @@ this blows away the default mappings, and lets us do our own. Then we need
 to set them up! A word of warning: how you accomplish the following will
 depend to a certain extent on your terminal emulator. I use the gnome
 terminal, which doesn't send a normal Alt through to the terminal, so you
-can use the normal `A-j` or `M-j` notation to say 'hey, bind Alt-j to
+can't use the normal `A-j` or `M-j` notation to say 'hey, bind Alt-j to
 such-and-such'. Instead we have to send the right escaped keycode, by
 doing `crtl-v` and then typing the key we want. So if you copy paste this
 is may not work? Try it! Then try overwriting the bindings with `C-v-Alt`.
