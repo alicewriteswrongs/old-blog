@@ -37,9 +37,7 @@ binding I used to use for i3wm. Anyway, here's how we do that!
 
 um first you need to install it. do this:
 
-```
-Plugin 'christoomey/vim-tmux-navigator'
-```
+    Plugin 'christoomey/vim-tmux-navigator'
 
 if you use Vundle. If you don't, you probably know how to sort things out
 (e.g. with pathogen or what have you) but if you don't use a package
@@ -53,9 +51,7 @@ in my [dotfiles
 repo](https://github.com/aliceriot/dotfiles/blob/master/vimrc/laptop_plugin_config.vimrc).
 Here's what we need:
 
-```
-let g:tmux_navigator_no_mappings = 1
-```
+    let g:tmux_navigator_no_mappings = 1
 
 this blows away the default mappings, and lets us do our own. Then we need
 to set them up! A word of warning: how you accomplish the following will
@@ -68,13 +64,13 @@ is may not work? Try it! Then try overwriting the bindings with `C-v-Alt`.
 
 Anyway, here's how we bind!
 
-```
+{% highlight vim %}
 nnoremap <silent> h :TmuxNavigateLeft<cr>
 nnoremap <silent> j :TmuxNavigateDown<cr>
 nnoremap <silent> k :TmuxNavigateUp<cr>
 nnoremap <silent> l :TmuxNavigateRight<cr>
 nnoremap <silent> \ :TmuxNavigateRight<cr>
-```
+{% endhighlight %}
 
 Great! Now `Alt-hjkl` will move you around within Vim in a way that makes
 sense for Vim people. What about tmux?
@@ -84,14 +80,14 @@ sense for Vim people. What about tmux?
 For tmux we can use the normal `m-h` notation (for meta-h). This looks
 like:
 
-```
+{% highlight bash %}
 is_vim='echo "#{pane_current_command}" | grep -iqE "(^|\/)g?(view|n?vim?)(diff)?$"'
 bind -n m-h if-shell "$is_vim" "send-keys m-h" "select-pane -L"
 bind -n m-j if-shell "$is_vim" "send-keys m-j" "select-pane -D"
 bind -n m-k if-shell "$is_vim" "send-keys m-k" "select-pane -U"
 bind -n m-l if-shell "$is_vim" "send-keys m-l" "select-pane -R"
 bind -n m-\ if-shell "$is_vim" "send-keys m-\\" "select-pane -l"
-```
+{% endhighlight %}
 
 Great! Basically this defines a little function to figure out if a pane
 contains a Vim instance, and then based on that info it decides whether to
