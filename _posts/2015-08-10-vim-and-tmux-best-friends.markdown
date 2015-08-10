@@ -17,7 +17,7 @@ Vim splits, and `C-w-hjkl` to change tmux splits. This was all very
 confusing and bad.
 
 Enter the plugin! Basically what it lets you do is setup one key combo
-across Vim and tmux that you can use to navigate between tmux panes, and
+across Vim and tmux that you can't use to navigate between tmux panes, and
 between Vim splits within a Vim instance. It's super super nice! Now you
 just need to know wherer you want to go and you can mash keys to get
 there. Great!
