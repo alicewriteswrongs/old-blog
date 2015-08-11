@@ -95,9 +95,8 @@ I also added a couple of super handy shell aliases. Since I'm basically
 writing the Markdown portion of the project for Github I want to really
 frequently check how things are rendering. This alias is handy:
 
-{% highlight zsh &}
-alias litpush='Pweave -f pandoc *.mdw && git commit -a && git push origin
-master'
+{% highlight bash %}
+alias litpush='Pweave -f pandoc *.mdw && git commit -a && git push origin master'
 {% endhighlight %}
 
 
