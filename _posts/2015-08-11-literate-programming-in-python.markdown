@@ -91,6 +91,17 @@ nnoremap <Leader>md :setlocal ft=markdown<cr>
 So I can hit `<Leader>lp` (literate Python) to get to Python mode, and
 `<Leader>md` to get to Markdown. It works decently well!
 
+I also added a couple of super handy shell aliases. Since I'm basically
+writing the Markdown portion of the project for Github I want to really
+frequently check how things are rendering. This alias is handy:
+
+{% highlight zsh &}
+alias litpush='Pweave -f pandoc *.mdw && git commit -a && git push origin
+master'
+{% endhighlight %}
+
+
+
 ##Limitations
 
 Where you can split up the source code in your main file is somewhat
