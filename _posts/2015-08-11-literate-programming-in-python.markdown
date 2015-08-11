@@ -99,7 +99,9 @@ frequently check how things are rendering. This alias is handy:
 alias litpush='Pweave -f pandoc *.mdw && git commit -a && git push origin master'
 {% endhighlight %}
 
-
+This will weave (produce clean markdown) any `.mdw` files in the
+directory, commit any changes (for previously committed files), and push
+the commit to Github. Nice!
 
 ##Limitations
 
