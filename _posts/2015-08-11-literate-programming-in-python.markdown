@@ -75,7 +75,7 @@ This will give us a nice clean `myprogram.py` in the same directory. Cool!
 So that's great! It's pretty easy to write your documentation and program
 at the same time, and it really makes you ensure that you're keeping the
 documentation and the code in sync. The problem with all this, though, is
-that they file you're editing is effectively two different langauges. We
+that they file you're editing is effectively two different languages. We
 have Markdown for the documentation and Python for the actual program, so
 how does your editor decide what syntax highlighting to use? Well, not all
 that intelligently.
