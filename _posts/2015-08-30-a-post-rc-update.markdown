@@ -24,7 +24,7 @@ wrote a little program that uses it to simulate Alice encrypting a message
 (using repeating-key XOR) and then sending it to Bob, who can decrypt it
 with their shared secret.
 
-It's not intended to be secure in any way, but rather use a little
+It's not intended to be secure in any way, but rather used as a little
 demonstration to explain better how DH works.
 
 Diffie-Hellman is super super cool! And it's actually very easy to
@@ -47,7 +47,19 @@ Python (which was so much easier omg).
 I've learned a bunch about dealing with binary data in Python, about
 repeating-key XOR (an ECB block cipher with a bytearray), about how to
 break simple cryptosystems (like repeating-key XOR, which is really the
-[Vigenere](https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher)), and a bit
-about AES.
+[Vigenere cipher](https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher)),
+and a bit about AES.
 
-Exercise 06 was probably the most challenging. The 
+Exercise 06 was probably the most challenging. We get a file which has
+been encrypted using repeating-key XOR, but we do not know how long the
+keysize is. So we have to 1) figure out the keysize and 2) figure out each
+byte of the key. It was a fun challenge! This one was a lot of fun, and
+I plan to write up my solution as a separate blog post soon-ish.
+
+Exercise 07 and 08 gave a taste of the next section, which is about block
+ciphers. Hopefully I'll have some time to start working through set 02
+next week.
+
+That's about it! It's been great to be back in Boston, and while I'm
+excited to be working I wish I could just write silly programs to mess
+around with crypto all day. Someday, grad school...
