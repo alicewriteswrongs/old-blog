@@ -28,7 +28,7 @@ intersperse the code that performs that step. Cool!
 First off, we'll read in the ciphertext:
 
 
-{% highlight bash %}
+{% highlight python %}
 from base64 import b64decode
 
 with open("./ex06.txt") as f:
@@ -64,7 +64,7 @@ are different.
 Here's a little function to do that:
 
 
-{% highlight bash %}
+{% highlight python %}
 def distance(s1, s2):
     return sum(bin(x^y).count('1') for x,y in zip(s1,s2))
 {% endhighlight %}
@@ -89,7 +89,7 @@ been XORed against the same block, and so will have that in common. Great!
 This is a class named `Keysieve` which does this for us:
 
 
-{% highlight bash %}
+{% highlight python %}
 from statistics import mean
 
 class Keysieve(object):
@@ -118,7 +118,7 @@ work on.
 Lets instantiate a `Keysieve` object now:
 
 
-{% highlight bash %}
+{% highlight python %}
 keysieve = Keysieve(ciphertext, 2,40)
 {% endhighlight %}
 
@@ -134,7 +134,7 @@ call the `sort` method on `keysieve.scores`.
 Then we can get our putative best keysize by doing:
 
 
-{% highlight bash %}
+{% highlight python %}
 keysize = keysieve.scores[0][0]
 {% endhighlight %}
 
@@ -161,7 +161,7 @@ Here's how we'll make the blocks (naturally, with a class called
 `Blocks`):
 
 
-{% highlight bash %}
+{% highlight python %}
 class Blocks(object):
     """takes ciphertext and best keysizes, makes blocks"""
     def __init__(self, ciphertext, keysize):
@@ -181,7 +181,7 @@ class Blocks(object):
 Now we can make the blocks! Weee!
 
 
-{% highlight bash %}
+{% highlight python %}
 blocks = Blocks(ciphertext, keysize)
 {% endhighlight %}
 
@@ -203,7 +203,7 @@ I tried out a bunch of different scoring schemes for this step, and this
 is what gave me the best result:
 
 
-{% highlight bash %}
+{% highlight python %}
 from collections import Counter
 
 class Singlebyte(object):
@@ -234,7 +234,7 @@ Seems random right? I thought so too, but it does work!
 Anyway, to get a key we do this:
 
 
-{% highlight bash %}
+{% highlight python %}
 key = bytearray()
 for block in blocks.blocks:
     temp = Singlebyte(block)
@@ -253,7 +253,7 @@ for our ciphertext. I promise this is the last class definition you need
 to read:
 
 
-{% highlight bash %}
+{% highlight python %}
 class Decrypt(object):
     def __init__(self, ciphertext, key):
         self.ctext = ciphertext
@@ -278,7 +278,7 @@ a plaintext message waiting for us!
 Here's how we'd find the final answer:
 
 
-{% highlight bash %}
+{% highlight python %}
 decrypt = Decrypt(ciphertext, key)
 {% endhighlight %}
 
