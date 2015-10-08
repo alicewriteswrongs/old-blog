@@ -109,20 +109,15 @@ range(10)]
         self.scores.sort(key = lambda x: x[1])
 {% endhighlight %}
 
-
-
 The constructor for `Keysieve` takes a minkey and a maxkey, which are the
 bounds on our keysize search space. We also need to have a ciphertext to
 work on.
 
 Lets instantiate a `Keysieve` object now:
 
-
 {% highlight python %}
 keysieve = Keysieve(ciphertext, 2,40)
 {% endhighlight %}
-
-
 
 Great! When we instantiate the object the `sieve` method gets called
 automatically. This is going to iterate through the possible keysizes and,
@@ -133,12 +128,9 @@ call the `sort` method on `keysieve.scores`.
 
 Then we can get our putative best keysize by doing:
 
-
 {% highlight python %}
 keysize = keysieve.scores[0][0]
 {% endhighlight %}
-
-
 
 ##Breaking up the Ciphertext
 
@@ -160,7 +152,6 @@ separate ciphertexts encrypted with single byte XOR. Great!
 Here's how we'll make the blocks (naturally, with a class called
 `Blocks`):
 
-
 {% highlight python %}
 class Blocks(object):
     """takes ciphertext and best keysizes, makes blocks"""
@@ -176,16 +167,11 @@ class Blocks(object):
         map(bytearray, self.blocks)
 {% endhighlight %}
 
-
-
 Now we can make the blocks! Weee!
-
 
 {% highlight python %}
 blocks = Blocks(ciphertext, keysize)
 {% endhighlight %}
-
-
 
 Cool, we have `blocks`.
 
@@ -201,7 +187,6 @@ consist of ASCII characters like letters, spaces, and so on.
 
 I tried out a bunch of different scoring schemes for this step, and this
 is what gave me the best result:
-
 
 {% highlight python %}
 from collections import Counter
@@ -223,8 +208,6 @@ class Singlebyte(object):
             self.keys.append((key, spaces + upper + lower))
 {% endhighlight %}
 
-
-
 So our `scorekeys` method will score a key by adding the number of
 spaces to the number of upper and lower case examples of the letters
 `etaoinshrd`.
@@ -233,15 +216,12 @@ Seems random right? I thought so too, but it does work!
 
 Anyway, to get a key we do this:
 
-
 {% highlight python %}
 key = bytearray()
 for block in blocks.blocks:
     temp = Singlebyte(block)
     key.append(temp.bestkey[0])
 {% endhighlight %}
-
-
 
 So we iterate through our blocks, solving each one using `Singlebyte`, and
 appending the best key to a master key. We're almost there now!
@@ -251,7 +231,6 @@ appending the best key to a master key. We're almost there now!
 Now that we have the correct key we want to use it to get the plaintext
 for our ciphertext. I promise this is the last class definition you need
 to read:
-
 
 {% highlight python %}
 class Decrypt(object):
@@ -268,8 +247,6 @@ class Decrypt(object):
         self.plaintext = ''.join(map(chr, temp))
 {% endhighlight %}
 
-
-
 So we pass in the ciphertext and the newly minted key. Then we have
 a `decrypt` method which is going to iterate through the ciphertext and
 XOR character `i` with `key[i % keysize]`. If all goes well, we will have
@@ -277,11 +254,9 @@ a plaintext message waiting for us!
 
 Here's how we'd find the final answer:
 
-
 {% highlight python %}
 decrypt = Decrypt(ciphertext, key)
 {% endhighlight %}
-
 
 
 Then we could get the plaintext out by doing:
