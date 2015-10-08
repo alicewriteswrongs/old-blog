@@ -259,11 +259,9 @@ decrypt = Decrypt(ciphertext, key)
 
 Then we could get the plaintext out by doing:
 
-```
-print("The key was: {}".format(''.join(map(chr, key))))
-print("Plaintext:")
-print(decrypt.plaintext)
-```
+    print("The key was: {}".format(''.join(map(chr, key))))
+    print("Plaintext:")
+    print(decrypt.plaintext)
 
 but I don't want to spoil *everything* for you, at least go run this code
 yourself!
