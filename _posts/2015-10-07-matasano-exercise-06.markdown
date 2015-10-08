@@ -28,12 +28,13 @@ intersperse the code that performs that step. Cool!
 First off, we'll read in the ciphertext:
 
 
-~~~~{.python}
+{% highlight bash %}
 from base64 import b64decode
 
 with open("./ex06.txt") as f:
-    ciphertext = b64decode(''.join([l.strip() for l in f.readlines()]))
-~~~~~~~~~~~~~
+    ciphertext = b64decode(''.join([l.strip() for l in
+f.readlines()]))
+{% endhighlight %}
 
 
 
@@ -63,10 +64,10 @@ are different.
 Here's a little function to do that:
 
 
-~~~~{.python}
+{% highlight bash %}
 def distance(s1, s2):
     return sum(bin(x^y).count('1') for x,y in zip(s1,s2))
-~~~~~~~~~~~~~
+{% endhighlight %}
 
 
 
@@ -88,7 +89,7 @@ been XORed against the same block, and so will have that in common. Great!
 This is a class named `Keysieve` which does this for us:
 
 
-~~~~{.python}
+{% highlight bash %}
 from statistics import mean
 
 class Keysieve(object):
@@ -101,11 +102,12 @@ class Keysieve(object):
     def sieve(self):
         for ksize in self.keys:
             first = self.ctext[:ksize]
-            chunks = [self.ctext[i*ksize:(i+1)*ksize] for i in range(10)]
+            chunks = [self.ctext[i*ksize:(i+1)*ksize] for i in
+range(10)]
             scores = [distance(first, i)/ksize for i in chunks]
             self.scores.append((ksize, mean(scores)))
         self.scores.sort(key = lambda x: x[1])
-~~~~~~~~~~~~~
+{% endhighlight %}
 
 
 
@@ -116,9 +118,9 @@ work on.
 Lets instantiate a `Keysieve` object now:
 
 
-~~~~{.python}
+{% highlight bash %}
 keysieve = Keysieve(ciphertext, 2,40)
-~~~~~~~~~~~~~
+{% endhighlight %}
 
 
 
@@ -132,9 +134,9 @@ call the `sort` method on `keysieve.scores`.
 Then we can get our putative best keysize by doing:
 
 
-~~~~{.python}
+{% highlight bash %}
 keysize = keysieve.scores[0][0]
-~~~~~~~~~~~~~
+{% endhighlight %}
 
 
 
@@ -159,7 +161,7 @@ Here's how we'll make the blocks (naturally, with a class called
 `Blocks`):
 
 
-~~~~{.python}
+{% highlight bash %}
 class Blocks(object):
     """takes ciphertext and best keysizes, makes blocks"""
     def __init__(self, ciphertext, keysize):
@@ -172,16 +174,16 @@ class Blocks(object):
         for tup in enumerate(self.ciphertext):
             self.blocks[tup[0] % self.keysize].append(tup[1])
         map(bytearray, self.blocks)
-~~~~~~~~~~~~~
+{% endhighlight %}
 
 
 
 Now we can make the blocks! Weee!
 
 
-~~~~{.python}
+{% highlight bash %}
 blocks = Blocks(ciphertext, keysize)
-~~~~~~~~~~~~~
+{% endhighlight %}
 
 
 
@@ -201,7 +203,7 @@ I tried out a bunch of different scoring schemes for this step, and this
 is what gave me the best result:
 
 
-~~~~{.python}
+{% highlight bash %}
 from collections import Counter
 
 class Singlebyte(object):
@@ -219,7 +221,7 @@ class Singlebyte(object):
             upper = sum(plain.count(c) for c in common.upper())
             lower = sum(plain.count(c) for c in common)
             self.keys.append((key, spaces + upper + lower))
-~~~~~~~~~~~~~
+{% endhighlight %}
 
 
 
@@ -232,12 +234,12 @@ Seems random right? I thought so too, but it does work!
 Anyway, to get a key we do this:
 
 
-~~~~{.python}
+{% highlight bash %}
 key = bytearray()
 for block in blocks.blocks:
     temp = Singlebyte(block)
     key.append(temp.bestkey[0])
-~~~~~~~~~~~~~
+{% endhighlight %}
 
 
 
@@ -251,7 +253,7 @@ for our ciphertext. I promise this is the last class definition you need
 to read:
 
 
-~~~~{.python}
+{% highlight bash %}
 class Decrypt(object):
     def __init__(self, ciphertext, key):
         self.ctext = ciphertext
@@ -264,7 +266,7 @@ class Decrypt(object):
         for i in enumerate(self.ctext):
             temp.append(i[1] ^ self.key[i[0] % len(self.key)])
         self.plaintext = ''.join(map(chr, temp))
-~~~~~~~~~~~~~
+{% endhighlight %}
 
 
 
@@ -276,9 +278,9 @@ a plaintext message waiting for us!
 Here's how we'd find the final answer:
 
 
-~~~~{.python}
+{% highlight bash %}
 decrypt = Decrypt(ciphertext, key)
-~~~~~~~~~~~~~
+{% endhighlight %}
 
 
 
@@ -292,4 +294,3 @@ print(decrypt.plaintext)
 
 but I don't want to spoil *everything* for you, at least go run this code
 yourself!
-
