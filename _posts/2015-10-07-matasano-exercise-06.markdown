@@ -9,7 +9,7 @@ layout: post
 This is a literate Python explanation of [my
 solution](https://github.com/aliceriot/CryptoPals/tree/master/set1/Python/ex06)
 to the [sixth](http://cryptopals.com/sets/1/challenges/6/) Matasano
-problem.
+problem. It may look better on [github](https://github.com/aliceriot/CryptoPals/blob/master/set1/Python/ex06/literate_python/matasano_06.md) than it does here, which brings me great shame.
 
 Needless to say, if you are doing the challenges yourself, you should not
 read this! It will make it far too easy. If, however, you've been stuck on
