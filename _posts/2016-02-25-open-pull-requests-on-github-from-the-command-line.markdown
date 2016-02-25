@@ -10,8 +10,6 @@ share! Basically it's a set of shell functions that give you a command
 your browser. Nifty, right? No more switch to Chrome -> ctrl-l ->
 https://github.com/pulls -> click on pr for us!
 
-##Functions we need
-
 First we need to add pull requests (which are actually just remote
 branches that Github automatically creates) to our remotes. I have an
 alias that lets me quickly add them to any repo:
