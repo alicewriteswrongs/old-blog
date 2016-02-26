@@ -113,5 +113,5 @@ Unfortunately this does get a little slow on big repos (the step where we
 find branches containing our commit of interest gets slow). If you're on
 a Mac you should be able to just replace `xdg-open` with `open`.
 
-Disclaimer: I'm bad a shell stuff, it's not my fault if you blow something
-up.
+Disclaimer: I'm bad at shell stuff, it's not my fault if you blow
+something up.
