@@ -102,6 +102,7 @@ Then we can finally write this:
 
     {% highlight bash %}
     function ghpull () {
+        git fetch origin
         xdg-open "https://github.com/`github_repo_location`/pull/`pull_request_number`"
     }
     {% endhighlight %}
