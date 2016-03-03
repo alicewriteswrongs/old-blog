@@ -56,5 +56,40 @@ Great - now any window with the title `Float` will float!
 ##Running the title function on startup
 
 Great, so now we can set the title for a gnome terminal to whatever we
-want.
+want. All we need to figure out now is how to get that function to run on
+startup in gnome-terminal.
 
+Fair warning: I'm a shell noob. I ran into a bunch of character escaping
+/ quoting issues, and this how I solved it :P
+
+First, another shell function:
+
+{% highlight bash %}
+function floating_gnome_term () {
+    gnome-terminal -e "zsh -c '$(declare -f title); title Float; zsh'"
+}
+{% endhighlight %}
+
+the `-e` option accepts a command that will be run on startup.
+
+Then we need a shell script (in our `$PATH` somehow):
+
+{% highlight bash %}
+#!/bin/zsh
+
+source ~/.zshrc
+floating_gnome_term
+{% endhighlight %}
+
+this just sources all of our `zsh` stuff and then runs the function above.
+Now the final step is just adding a keybind to run this shell script in
+i3:
+
+    bindsym $mod+Shift+Return exec floating_gnome_term.sh
+
+and that's it! I have `$mod+Return` bound to a normal, tiling terminal
+window, so adding `Shift` makes sense to me.
+
+Floating windows everywhere!
+
+![floats](/images/so_much_floating.png)
